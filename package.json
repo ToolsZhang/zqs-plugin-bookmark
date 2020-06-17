@@ -1,0 +1,72 @@
+{
+  "name": "zqs-plugin-bookmark",
+  "version": "1.0.0",
+  "description": "a bookmarkPlugin for zqs",
+  "files": [
+    "lib",
+    "default_config"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "npm run build -- --watch",
+    "watch:test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToolsZhang/zqs-plugin-bookmark.git"
+  },
+  "keywords": [
+    "zqs"
+  ],
+  "author": "Zq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToolsZhang/zqs-plugin-bookmark/issues"
+  },
+  "homepage": "https://github.com/ToolsZhang/zqs-plugin-bookmark#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.1.0",
+    "canvas": "^2.6.1",
+    "coveralls": "^3.1.0",
+    "jest": "^25.0.0",
+    "jest-environment-node-debug": "^2.0.0",
+    "mock-require": "^3.0.3",
+    "prettier": "^1.19.1",
+    "gulp": "^4.0.2",
+    "gulp-typedoc": "^2.2.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.1.0",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.17.7",
+    "typedoc-plugin-markdown": "^2.3.1",
+    "typescript": "^3.9.5",
+    "zqs-core": "0.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testEnvironment": "node",
+    "collectCoverage": true
+  }
+}
